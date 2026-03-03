@@ -1,0 +1,49 @@
+model_list:
+  - model_name: openai/minimax-m2.5
+    litellm_params:
+      model: openai/minimax-m2.5
+      api_key: sk-cp-ebYeOE0mA-4SjJh6qLeN4faa2sr09kdOvGeL3CXI2l_BjMxr3i0aDO02LSNyScuKThOOat5lmIjBL7-qIvyxNZ1KV74RvpdmPtGttEooSzx6I4sdCDKhAa4
+      api_base: https://api.minimaxi.com/v1
+      api_version: "v1"
+    model_info:
+      mode: chat
+      supports_function_calling: true
+      supports_vision: false
+
+  - model_name: minimax-m2.5
+    litellm_params:
+      model: openai/minimax-m2.5
+      api_key: sk-cp-ebYeOE0mA-4SjJh6qLeN4faa2sr09kdOvGeL3CXI2l_BjMxr3i0aDO02LSNyScuKThOOat5lmIjBL7-qIvyxNZ1KV74RvpdmPtGttEooSzx6I4sdCDKhAa4
+      api_base: https://api.minimaxi.com/v1
+      api_version: "v1"
+    model_info:
+      mode: chat
+      supports_function_calling: true
+      supports_vision: false
+
+  - model_name: claude-sonnet-4-5
+    litellm_params:
+      model: openai/minimax-m2.5
+      api_key: sk-cp-ebYeOE0mA-4SjJh6qLeN4faa2sr09kdOvGeL3CXI2l_BjMxr3i0aDO02LSNyScuKThOOat5lmIjBL7-qIvyxNZ1KV74RvpdmPtGttEooSzx6I4sdCDKhAa4
+      api_base: https://api.minimaxi.com/v1
+      api_version: "v1"
+    model_info:
+      mode: chat
+
+  - model_name: claude-haiku-3-5
+    litellm_params:
+      model: openai/minimax-m2.5
+      api_key: sk-cp-ebYeOE0mA-4SjJh6qLeN4faa2sr09kdOvGeL3CXI2l_BjMxr3i0aDO02LSNyScuKThOOat5lmIjBL7-qIvyxNZ1KV74RvpdmPtGttEooSzx6I4sdCDKhAa4
+      api_base: https://api.minimaxi.com/v1
+      api_version: "v1"
+    model_info:
+      mode: chat
+
+litellm_settings:
+  drop_params: true
+  set_verbose: true
+  request_timeout: 120
+  telemetry: false
+
+general_settings:
+  master_key: sk-1234
