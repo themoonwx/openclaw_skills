@@ -1,27 +1,25 @@
-# OpenBridge Discord DM 支持 Skill
+# OpenBridge Discord DM/群聊支持 Skill
 
-## 作用
-为 OpenBridge 添加 Discord 私信（DM）支持，用户可以直接给机器人发私信
+## 状态
+- ✅ 群聊 (Group DM) - 可正常工作
+- ⚠️ 私信 (DM) - Discord 限制，暂不可用
 
-## 原理
-OpenBridge 原版只支持服务器频道，不支持私信
-通过 monkey-patch 方式修改 Discord 适配器，添加 DM 支持
-
-## 修改内容
-
-1. 添加 DirectMessages 意图（Gateway Intent）
-2. 修改消息处理逻辑，DM 中直接使用 channelId 作为 threadId
-3. 自动为每个 DM 用户创建会话
+## 已完成的修复
+1. 添加 DirectMessages Gateway Intent
+2. 群聊消息处理逻辑
 
 ## 使用方法
+1. 应用补丁: node ~/.claude/skills/openbridge-dm/patch-dm-v3.js
+2. 启动: cd ~/.openbridge-ai && nohup proxychains4 /home/ubuntu/.npm-global/bin/openbridge-ai start > ~/.openbridge-ai/daemon.log 2>&1 &
 
-### 测试模式（与原版共存）
-./start-dm.sh
+## 群聊测试
+在 Discord 新建群聊，添加 OpenBridge 机器人，可以正常对话。
 
-### 排查
-tail -f ~/.openbridge-ai/dm.log
+## 私信问题
+Discord 限制机器人接收私信消息，需要满足：
+1. 用户和机器人在同一服务器
+2. 用户在服务器与机器人有过互动
+3. 可能有额外的政策限制
 
-## 注意事项
-- 需要在 Discord Developer Portal 开启 Message Content Intent
-- DM 会占用独立的会话，消耗额外的 Claude API 配额
-- 测试确认正常后再考虑替换原版
+## 备份
+原版文件: ~/.npm-global/lib/node_modules/openbridge-ai/dist/adapters/discord.js.bak
